@@ -1,0 +1,139 @@
+/* Slow Ping Animation */
+@keyframes ping-slow {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .animate-ping-slow {
+    animation: ping-slow 3s infinite;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-in-out;
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 1.5s ease-out;
+  }
+
+  
+
+  input::placeholder {
+    color: #888; /* Change placeholder color */
+    opacity: 1; /* Keep placeholder opaque */
+  }
+
+  
+
+  /* pricing section */
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-up {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in-up {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* TailwindCSS Animation Classes */
+  .animate-slide-in-left {
+    animation: slide-in-left 1s ease forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slide-in-right 1s ease forwards;
+  }
+  
+  .animate-slide-in-up {
+    animation: slide-in-up 1s ease forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease forwards;
+  }
+  
+  /* Add this CSS to hide the section initially */
+  .section-to-animate {
+    opacity: 0;
+    transform: translateY(-100%); /* Adjust as needed */
+  }
+  
+  .section-to-animate.animate-show {
+    animation: show 1s ease forwards;
+  }
+  
+  @keyframes show {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* pricing section end */
