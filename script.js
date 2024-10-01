@@ -18,31 +18,31 @@
   
       // Initially show only the first 6 cards
       function showInitialCards() {
-        const cards = cardContainer.querySelectorAll('.card');
-        for (let i = 6; i < cards.length; i++) {
-          cards[i].classList.add('hidden');
-        }
+          const cards = cardContainer.querySelectorAll('.card');
+          for (let i = 6; i < cards.length; i++) {
+              cards[i].classList.add('hidden');
+          }
       }
-      
+  
       // Show more cards
       showMoreBtn.addEventListener('click', function() {
-        hiddenCards.forEach(card => {
-          card.classList.remove('hidden');
-        });
-        showMoreBtn.classList.add('hidden');
-        showLessBtn.classList.remove('hidden');
+          hiddenCards.forEach(card => {
+              card.classList.remove('hidden');
+          });
+          showMoreBtn.classList.add('hidden');
+          showLessBtn.classList.remove('hidden');
       });
   
       // Show less cards
       showLessBtn.addEventListener('click', function() {
-        hiddenCards.forEach(card => {
-          card.classList.add('hidden');
-        });
-        showMoreBtn.classList.remove('hidden');
-        showLessBtn.classList.add('hidden');
+          hiddenCards.forEach(card => {
+              card.classList.add('hidden');
+          });
+          showMoreBtn.classList.remove('hidden');
+          showLessBtn.classList.add('hidden');
       });
   
       // Initialize cards
       showInitialCards();
-    });
+  });
   

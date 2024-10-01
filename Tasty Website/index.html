@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasty Restaurant Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header Section -->
+  <header class="bg-gray-800 text-white p-5 sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold">Tasty Restaurant</h1>
+      
+      <!-- Mobile Menu Icon -->
+      <div class="block lg:hidden">
+        <button id="menu-toggle" class="focus:outline-none text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex space-x-4 nav-links">
+        <a href="#" class="text-lg px-4 hover:text-yellow-500 transition duration-300">Home</a>
+        <a href="#menu" class="text-lg px-4 hover:text-yellow-500 transition duration-300">Menu</a>
+        <a href="#contact" class="text-lg px-4 hover:text-yellow-500 transition duration-300">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden flex-col space-y-4 text-center mt-4">
+      <a href="#" class="text-lg px-4 hover:text-yellow-500 transition duration-300">Home</a>
+      <a href="#menu" class="text-lg px-4 hover:text-yellow-500 transition duration-300">Menu</a>
+      <a href="#contact" class="text-lg px-4 hover:text-yellow-500 transition duration-300">Contact</a>
+    </div>
+  </header>
+
+ <!-- Hero Section (Full-page Slider) -->
+<!-- Hero Section (Full-page Slider with Images) -->
+<section class="relative overflow-hidden">
+    <!-- Slider Container -->
+    <div id="slider" class="flex transition-transform duration-700 h-screen w-screen">
+      
+      <!-- Slide 1 -->
+      <div class="relative min-w-full h-screen">
+        <img src="../images/restrurant.jpg" alt="Restaurant Interior" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div class="text-center text-white">
+            <h2 class="text-5xl font-bold mb-4">Welcome to Tasty Restaurant</h2>
+            <p class="text-2xl">The best place to enjoy delicious meals.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="relative min-w-full h-screen">
+        <img src="https://example.com/slide2.jpg" alt="Special Dishes" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div class="text-center text-white">
+            <h2 class="text-5xl font-bold mb-4">Discover Our Special Dishes</h2>
+            <p class="text-2xl">Taste the finest culinary creations.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="relative min-w-full h-screen">
+        <img src="https://example.com/slide3.jpg" alt="Dining Experience" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div class="text-center text-white">
+            <h2 class="text-5xl font-bold mb-4">Reserve Your Table Now</h2>
+            <p class="text-2xl">Enjoy a fine dining experience with us.</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Navigation Buttons -->
+    <div class="absolute inset-0 flex justify-between items-center px-4">
+      <button id="prev" class="bg-black bg-opacity-50 text-white p-3 rounded-full focus:outline-none">❮</button>
+      <button id="next" class="bg-black bg-opacity-50 text-white p-3 rounded-full focus:outline-none">❯</button>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="container mx-auto my-10 p-5">
+    <h2 class="text-4xl font-bold text-center mb-8">Our Menu Categories</h2>
+  
+    <!-- Category Tabs -->
+    <div class="flex justify-center space-x-4 mb-10">
+      <button id="biryaniTab" class="tab-btn text-xl font-semibold px-6 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition duration-300">Biryani</button>
+      <button id="bbqTab" class="tab-btn text-xl font-semibold px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-300">BBQ</button>
+      <button id="pizzaTab" class="tab-btn text-xl font-semibold px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300">Pizza</button>
+    </div>
+  
+    <!-- Biryani Section -->
+    <div id="biryaniSection" class="menu-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Beef Biryani -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
+        <img src="https://example.com/beef-biryani.jpg" alt="Beef Biryani" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">Beef Biryani</h3>
+          <p class="text-gray-700">Rich and flavorful beef cooked with aromatic basmati rice and spices.</p>
+        </div>
+      </div>
+  
+      <!-- Chicken Biryani -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
+        <img src="https://example.com/chicken-biryani.jpg" alt="Chicken Biryani" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">Chicken Biryani</h3>
+          <p class="text-gray-700">Tender chicken pieces layered with spicy rice for a perfect bite.</p>
+        </div>
+      </div>
+  
+      <!-- Mutton Biryani -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
+        <img src="https://example.com/mutton-biryani.jpg" alt="Mutton Biryani" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">Mutton Biryani</h3>
+          <p class="text-gray-700">Succulent mutton pieces slow-cooked with fragrant rice and traditional spices.</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- BBQ Section (Hidden by default) -->
+    <div id="bbqSection" class="menu-section hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
+        <img src="https://example.com/bbq.jpg" alt="BBQ" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">B.B.Q</h3>
+          <p class="text-gray-700">Grilled to perfection with mouth-watering sauces.</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pizza Section (Hidden by default) -->
+    <div id="pizzaSection" class="menu-section hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 hover:shadow-2xl transition duration-300">
+        <img src="https://example.com/pizza.jpg" alt="Pizza" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-bold mb-2">Pizza</h3>
+          <p class="text-gray-700">Cheesy, hot, and with your favorite toppings.</p>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-800 text-white p-10 text-center">
+    <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+    <p class="text-lg">House Number B-256, Street No. 5, Area 36/G, Shareef Colony, Karachi</p>
+    <p class="text-lg">Phone: +92 3032147549</p>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-gray-700 text-white p-5 text-center">
+    <p>&copy; 2024 Tasty Restaurant. All Rights Reserved.</p>
+  </footer>
+
+  
+
+<!-- tastytalk 2.0 start -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="TestyTalk2.0"
+      agent-id="ce3d41be-8070-4884-a63b-9d0e6df42df4"
+      language-code="en"
+    ></df-messenger>
+    <!-- tastytalk 2.0 end -->
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
