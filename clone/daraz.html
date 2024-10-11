@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daraz Homepage Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daraz Homepage Clone</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body class="bg-gray-100">
-
-  <!-- Header Section -->
-  <!-- Upper Header Links Section -->
+  <body class="bg-gray-200">
+   <!-- Header Section -->
+<!-- Upper Header Links Section -->
 <div class="bg-orange-600 text-gray-100 py-2 text-sm">
-  <div class="container mx-auto flex justify-end space-x-4">
+  <div class="container mx-auto flex justify-end space-x-4 hidden md:flex">
     <a href="#" class="hover:underline">Save More on App</a>
     <a href="#" class="hover:underline">Sell on Daraz</a>
     <a href="#" class="hover:underline">Customer Care</a>
@@ -27,16 +29,19 @@
 
 <!-- Main Header with Transparent Background, Centered, and Cart Icon Outside -->
 <header class="bg-orange-600 p-4 sticky top-0 z-50">
-  <div class="container mx-auto flex items-center justify-center space-x-4">
-    
+  <div class="container mx-auto flex items-center justify-center"> <!-- Maintain justify-between for even distribution -->
     <!-- Logo -->
-    <div class="flex items-center space-x-2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Daraz_Logo.svg/1280px-Daraz_Logo.svg.png" alt="Daraz Logo" class="h-8">
+    <div class="flex items-center space-x-1"> <!-- Use space-x-1 to reduce space -->
+      <img src="./img/darazlogo.png" alt="Daraz Logo" class="h-8" />
     </div>
 
-    <!-- Search Bar with Search Icon and Cart Icon Outside -->
-    <div class="w-1/2 flex items-center relative">
-      <input type="text" placeholder="Search in Daraz" class="w-full px-4 py-2 rounded-l-lg bg-gray-100 focus:outline-none">
+    <!-- Search Bar with Search Icon -->
+    <div class="w-1/2 flex items-center relative mx-2"> <!-- Added mx-2 for spacing -->
+      <input
+        type="text"
+        placeholder="Search in Daraz"
+        class="w-full px-4 py-2 rounded-l-lg bg-gray-100 focus:outline-none"
+      />
       <button class="bg-orange-400 px-4 py-2 rounded-r-lg text-white">
         <i class="fas fa-search"></i>
       </button>
@@ -46,119 +51,401 @@
     <a href="#" class="relative text-gray-900">
       <i class="fas fa-shopping-cart text-2xl"></i>
     </a>
+
+    <!-- Hamburger Menu for Mobile -->
+    <button id="hamburger" class="md:hidden flex items-center">
+      <i class="fas fa-bars text-gray-100 text-2xl"></i>
+    </button>
   </div>
 </header>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="absolute right-0 top-19 bg-orange-600 w-full hidden md:hidden z-10">
+  <div class="container mx-auto flex flex-col p-4">
+    <a href="#" class="hover:underline text-white">Save More on App</a>
+    <a href="#" class="hover:underline text-white">Sell on Daraz</a>
+    <a href="#" class="hover:underline text-white">Customer Care</a>
+    <a href="#" class="hover:underline text-white">Track My Order</a>
+    <a href="#" class="hover:underline text-white">Login</a>
+    <a href="#" class="hover:underline text-white">Sign Up</a>
+    <a href="#" class="hover:underline text-white">Cart</a>
+  </div>
+</div>
 
-  <!-- Hero Section -->
-  <section class="bg-gray-100 py-1">
-    <div class="container mx-auto flex justify-center items-center">
-      <!-- Slider Container -->
-      <div class="relative w-full lg:w-2/3 xl:w-2/3">
-        <!-- Slider Images -->
-        <div class="slider">
-          <div class="slide fade">
-            <img src="../images/slider1.jpg" alt="Slider Image 1" class="w-full h-full object-fit rounded-lg">
+    <!-- Hero Section -->
+
+    <section class="bg-gray-100 py-1"> 
+      <div class="container mx-auto flex justify-center items-center">
+        <!-- Slider Container -->
+        <div class="relative w-full lg:w-2/3 xl:w-2/3 group">
+          <!-- Left Arrow -->
+          <a
+            class="absolute top-1/2 transform -translate-y-1/2 left-4 z-10 cursor-pointer bg-gray-500 text-white hover:bg-white hover:text-gray-800 border border-gray-300 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+            onclick="prevSlide()"
+          >
+            &#10094;
+          </a>
+
+          <!-- Slider Images -->
+          <div class="slider relative">
+            <div class="slide fade">
+              <img
+                src="./img/slide1.webp"
+                alt="Slider Image 1"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide2.webp"
+                alt="Slider Image 2"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide3.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide4.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide5.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide6.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide7.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide8.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide9.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide10.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+            <div class="slide fade">
+              <img
+                src="./img/slide11.webp"
+                alt="Slider Image 3"
+                class="w-full h-full object-fit rounded-lg"
+              />
+            </div>
+
+            <!-- Add more slides as needed -->
           </div>
-          <div class="slide fade">
-            <img src="https://via.placeholder.com/800x400?text=Slide+2" alt="Slider Image 2" class="w-full h-full object-cover rounded-lg">
+
+          <!-- Right Arrow -->
+          <a
+            class="absolute top-1/2 transform -translate-y-1/2 right-4 z-10 cursor-pointer bg-gray-500 text-white hover:bg-white hover:text-gray-800 border border-gray-300 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+            onclick="nextSlide()"
+          >
+            &#10095;
+          </a>
+
+          <!-- Dots for navigation -->
+          <!-- <div class="flex justify-center mt-2">
+            <span
+              class="dot w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer"
+              onclick="currentSlide(1)"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer"
+              onclick="currentSlide(2)"
+            ></span>
+            <span
+              class="dot w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer"
+              onclick="currentSlide(3)"
+            ></span>
+          </div> -->
+        </div>
+
+        <!-- Banner Image on the Right -->
+        <div class="w-1/3 hidden lg:block p-6">
+          <img
+            src="./img/darazcoin.png"
+            alt="Banner Image"
+            class="w-full h-full object-fit rounded-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- New Section Below the Slider -->
+    <section class="bg-white">
+      <!-- Full Width Image -->
+      <img
+        src="./img/slide12.gif"
+        alt="Full Width Image"
+        class="w-full h-auto object-cover"
+      />
+    </section>
+
+    <!-- Flash sale Section -->
+    <section class="bg-white py-12 border border-gray-300 rounded-lg">
+      <div class="container mx-auto relative">
+        <h2 class="text-2xl font-bold leading-none mb-4">Flash Sale</h2>
+    
+        <!-- See All Products Button -->
+        <a href="#" class="absolute right-4 top-4 bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-700 transition">See All Products</a>
+    
+        <hr class="border-t border-gray-300 mb-6" />
+    
+        <!-- Flash Sale -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-center">
+          <a href="https://www.daraz.pk/products/airpro-air-31-tws-i12-airpods_-with-super-sound-high-quality-touch-sensors-true-stereo-headphones-with-built-in-mic-10m-transmission-bluetooth-wireless-earbuds-power-case-sport-headset-for-all-bluetooth-smart-devices-i118848124-s2232689743.html?scm=1007.51657.380827.0&pvid=9cfc5022-ef0d-40ae-b70d-e0c1fd019ef4&search=flashsale&spm=a2a0e.tm80335142.FlashSale.d_118848124" class="text-center p-2 transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img src="./img/airpods-ezgif.com-webp-to-jpg-converter.jpg" alt="AirPods" class="w-full h-full object-cover object-center rounded-lg" />
+              <p class="absolute bottom-0 left-0 right-0 bg-white opacity-75 text-sm font-bold p-1">Price: $199</p>
+            </div>
+            <p class="text-sm mt-1">AirPods</p>
+          </a>
+    
+          <a href="https://www.daraz.pk/products/tea-whitener-nestle-everyday-powder-350g-original-i2613009-s11052887.html?c=&channelLpJumpArgs=&clickTrackInfo=query%253Aeveryday%253Bnid%253A2613009%253Bsrc%253ALazadaMainSrp%253Brn%253A4991d150ea42b403abe7e17ed6dc5c68%253Bregion%253Apk%253Bsku%253ANE173OTFZX47NAFAMZ%253Bprice%253A681%253Bclient%253Adesktop%253Bsupplier_id%253A1000000%253Bbiz_source%253Ahttps%253A%252F%252Fwww.daraz.pk%252F%253Bslot%253A0%253Butlog_bucket_id%253A470687%253Basc_category_id%253A10002474%253Bitem_id%253A2613009%253Bsku_id%253A11052887%253Bshop_id%253A143167%253BtemplateInfo%253A-1_A3%25231103_B_L%2523&freeshipping=0&fs_ab=1&fuse_fs=&lang=en&location=Punjab&price=681&priceCompare=skuId%3A11052887%3Bsource%3Alazada-search-voucher%3Bsn%3A4991d150ea42b403abe7e17ed6dc5c68%3BunionTrace%3A214110c417286493839408845ef11f%3BoriginPrice%3A68100%3BvoucherPrice%3A68100%3BdisplayPrice%3A68100%3BsinglePromotionId%3A50000015555080%3BsingleToolCode%3AflashSale%3BvoucherPricePlugin%3A1%3BbuyerId%3A0%3Btimestamp%3A1728649384143&ratingscore=4.8146258503401365&request_id=4991d150ea42b403abe7e17ed6dc5c68&review=1764&sale=108717&search=1&source=search&spm=a2a0e.searchlist.list.0&stock=1" class="text-center p-2 transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img src="./img/everyday.jpg" alt="Everyday Item" class="w-full h-full object-cover object-center rounded-lg" />
+              <p class="absolute bottom-0 left-0 right-0 bg-white opacity-75 text-sm font-bold p-1">Price: $49</p>
+            </div>
+            <p class="text-sm mt-1">Everyday Item</p>
+          </a>
+    
+          <a href="https://www.daraz.pk/products/samsung-galaxy-a15-8gb-256gb-pta-approved-1-year-official-warranty-i466945081-s2203986810.html?scm=1007.51657.380827.0&pvid=f159e242-bc19-4559-aa7a-58a99a60b0ce&search=flashsale&spm=a2a0e.tm80335142.FlashSale.d_466945081" class="text-center p-2 transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img src="./img/mobile.jpg" alt="Mobile" class="w-full h-full object-cover object-center rounded-lg" />
+              <p class="absolute bottom-0 left-0 right-0 bg-white opacity-75 text-sm font-bold p-1">Price: $299</p>
+            </div>
+            <p class="text-sm mt-1">Mobile</p>
+          </a>
+    
+          <a href="link_to_watch_page" class="text-center p-2 transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img src="./img/watch.jpg" alt="Watch" class="w-full h-full object-cover object-center rounded-lg" />
+              <p class="absolute bottom-0 left-0 right-0 bg-white opacity-75 text-sm font-bold p-1">Price: $149</p>
+            </div>
+            <p class="text-sm mt-1">Watch</p>
+          </a>
+    
+          <a href="link_to_max_bar_page" class="text-center p-2 transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img src="./img/max_bar.jpg" alt="Max Bar" class="w-full h-full object-cover object-center rounded-lg" />
+              <p class="absolute bottom-0 left-0 right-0 bg-white opacity-75 text-sm font-bold p-1">Price: $79</p>
+            </div>
+            <p class="text-sm mt-1">Max Bar</p>
+          </a>
+    
+          <a href="link_to_nangrow_page" class="text-center p-2 transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img src="./img/nangrow.jpg" alt="Nangrow" class="w-full h-full object-cover object-center rounded-lg" />
+              <p class="absolute bottom-0 left-0 right-0 bg-white opacity-75 text-sm font-bold p-1">Price: $29</p>
+            </div>
+            <p class="text-sm mt-1">Nangrow</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    
+  
+    <!-- categeior Section -->
+    <section class="bg-gray-100 py-12  rounded-lg">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-bold leading-none text-start mb-8">
+          Categories
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6">
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/artificial.jpg"
+                alt="Category 1"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Artificial</p>
           </div>
-          <div class="slide fade">
-            <img src="https://via.placeholder.com/800x400?text=Slide+3" alt="Slider Image 3" class="w-full h-full object-cover rounded-lg">
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/cables.jpg"
+                alt="Category 2"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Wires/Cables</p>
+          </div>
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/glasses.jpg"
+                alt="Category 3"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Sun Glasses</p>
+          </div>
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/massengers_bags.jpg"
+                alt="Category 4"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Massenger Bags</p>
+          </div>
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/mobiles.jpg"
+                alt="Category 5"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Mobiles</p>
+          </div>
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/paints.jpg"
+                alt="Category 6"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Paints</p>
+          </div>
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/pilow.jpg"
+                alt="Category 7"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Dogs And Cat beds</p>
+          </div>
+          <div class="p-4 text-center transition-shadow duration-300 ease-in-out hover:shadow-lg bg-white rounded-lg">
+            <div class="relative aspect-square">
+              <img
+                src="./img/shampoo.jpg"
+                alt="Category 8"
+                class="w-full h-full object-cover object-center rounded-lg"
+              />
+            </div>
+            <p class="text-lg mt-2">Shampoo</p>
           </div>
         </div>
-  
-        <!-- Dots for navigation -->
-        <div class="flex justify-center mt-2">
-          <span class="dot w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer"></span>
-          <span class="dot w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer"></span>
-          <span class="dot w-3 h-3 bg-gray-400 rounded-full mx-1 cursor-pointer"></span>
-        </div>
       </div>
-  
-      <!-- Banner Image on the Right -->
-      <div class="w-1/3 hidden lg:block p-6">
-        <img src="https://via.placeholder.com/400x400" alt="Banner Image" class="w-full h-full object-cover rounded-lg">
-      </div>
-    </div>
-  </section>
+    </section>
+    
 
-  <!-- Categories Section -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto relative">
-      <h2 class="text-2xl font-bold leading-none text-center mb-8">Categories</h2>
-      
-      <!-- See All Products Button -->
-      <a href="#" class="absolute right-4 top-4 bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-700 transition">See All Products</a>
-  
-      <div class="flex flex-wrap justify-center">
-        <!-- Category Cards -->
-        <div class="w-full sm:w-1/2 lg:w-1/4 xl:w-1/4 p-4 text-center">
-          <img src="https://via.placeholder.com/100x100" alt="Category Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Electronics</p>
-        </div>
-        <div class="w-full sm:w-1/2 lg:w-1/4 xl:w-1/4 p-4 text-center">
-          <img src="https://via.placeholder.com/100x100" alt="Category Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Fashion</p>
-        </div>
-        <div class="w-full sm:w-1/2 lg:w-1/4 xl:w-1/4 p-4 text-center">
-          <img src="https://via.placeholder.com/100x100" alt="Category Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Home Appliances</p>
-        </div>
-        <div class="w-full sm:w-1/2 lg:w-1/4 xl:w-1/4 p-4 text-center">
-          <img src="https://via.placeholder.com/100x100" alt="Category Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Health & Beauty</p>
-        </div>
-        <div class="w-full sm:w-1/2 lg:w-1/4 xl:w-1/4 p-4 text-center">
-          <img src="https://via.placeholder.com/100x100" alt="Category Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Sports</p>
-        </div>
-        <div class="w-full sm:w-1/2 lg:w-1/4 xl:w-1/4 p-4 text-center">
-          <img src="https://via.placeholder.com/100x100" alt="Category Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Books</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
 
-  <!-- Flash Sales Section -->
-  <section class="bg-gray-100 py-12">
-    <div class="container mx-auto">
-      <h2 class="text-2xl font-bold leading-none text-center mb-8">Flash Sales</h2>
-      <div class="flex flex-wrap justify-center">
-        <div class="w-full lg:w-1/4 xl:w-1/4 p-6 text-center">
-          <img src="https://via.placeholder.com/200x200" alt="Product Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Product 1</p>
-          <span class="text-red-500 font-bold">Rs. 1,500</span>
-        </div>
-        <div class="w-full lg:w-1/4 xl:w-1/4 p-6 text-center">
-          <img src="https://via.placeholder.com/200x200" alt="Product Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Product 2</p>
-          <span class="text-red-500 font-bold">Rs. 2,200</span>
-        </div>
-        <div class="w-full lg:w-1/4 xl:w-1/4 p-6 text-center">
-          <img src="https://via.placeholder.com/200x200" alt="Product Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Product 3</p>
-          <span class="text-red-500 font-bold">Rs. 3,100</span>
-        </div>
-        <div class="w-full lg:w-1/4 xl:w-1/4 p-6 text-center">
-          <img src="https://via.placeholder.com/200x200" alt="Product Image" class="w-full h-full object-cover object-center">
-          <p class="text-lg mt-2">Product 4</p>
-          <span class="text-red-500 font-bold">Rs. 1,750</span>
-        </div>
+    <!-- Footer Section -->
+    <footer class="bg-gray-100 py-12">
+      <hr class="border-t border-gray-300 mb-6" />
+  
+      <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Customer Care Column -->
+              <div>
+                  <h4 class="font-bold text-lg mb-4">Customer Care</h4>
+                  <ul class="space-y-2">
+                      <li><a href="#" class="text-gray-600 hover:underline">Help Center</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">How to Buy</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Corporate & Bulk Purchasing</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Returns & Refunds</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Daraz Shop</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Contact Us</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Purchase Protection</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Daraz Pickup Points</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Daraz Column -->
+              <div>
+                  <h4 class="font-bold text-lg mb-4">Daraz</h4>
+                  <ul class="space-y-2">
+                      <li><a href="#" class="text-gray-600 hover:underline">About Us</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Digital Payments</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Daraz Donates</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Daraz Blog</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Terms & Conditions</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Privacy Policy</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">NTN Number: 4012118-6</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">STRN Number: 1700401218118</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Online Shopping App</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Online Grocery Shopping</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Daraz Exclusive</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Daraz University</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Sell on Daraz</a></li>
+                      <li><a href="#" class="text-gray-600 hover:underline">Join Daraz Affiliate Program</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Download App & Payment Methods -->
+              <div>
+                  <h4 class="font-bold text-lg mb-4">Happy Shopping</h4>
+                  <a href="#" class="text-orange-500 flex items-center mb-4">
+                      <img src="./img/logo.png" alt="App Icon" class="mr-2" />
+                      Download App
+                  </a>
+                  <div class="flex space-x-4 mb-4">
+                      <img src="./img/app store.png" alt="App Store" class="h-10 w-auto" />
+                      <img src="./img/google play store.png" alt="Google Play" class="h-10 w-auto" />
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Payment Methods & Verified Section -->
+<div class="border-t border-gray-300 pt-8 mt-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="flex flex-col items-center md:items-start">
+          <h2 class="text-center md:text-left mb-2">Payment Methods</h2>
+          <img src="./img/peyment-removebg-preview.png" alt="Payment Method" class="h-24 w-auto mb-2" />
       </div>
-    </div>
-  </section>
+      <div class="flex flex-col items-center md:items-start">
+          <h2 class="text-center md:text-right mb-2">Verified by</h2>
+          <img src="./img/verified-pci.svg" alt="PCI DSS Verified" class="h-8 w-auto mb-2" /> <!-- Reduced height -->
+      </div>
+  </div>
+</div>
 
-  <!-- Footer Section -->
-  <footer class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto text-center">
-      <p class="text-sm"> 2024 Daraz.pk Clone. All rights reserved.</p>
-    </div>
+      </div>
   </footer>
+  
+  
 
-  <script src="script.js"></script>
-
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
