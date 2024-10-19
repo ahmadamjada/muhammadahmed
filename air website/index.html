@@ -6,115 +6,151 @@
     <title>Travel Website</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.5/swiper-bundle.min.css"
+/>
 </head>
-<body class="font-sans bg-gray-100">
+<body class=" bg-gray-100">
 
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white sticky-header shadow-md">
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <h1 class="text-2xl font-bold text-yellow-300">Travel<span class="text-red-500">Buddy</span></h1>  <nav class="hidden md:flex space-x-4">
-                <a href="#home" class="hover:text-blue-300 transition-all">Home</a>
-                <a href="#destinations" class="hover:text-blue-300 transition-all">Destinations</a>
-                <a href="#about" class="hover:text-blue-300 transition-all">About Us</a>
-                <a href="#contact" class="hover:text-blue-300 transition-all">Contact</a>
-            </nav>
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round"   
- stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+   <!-- Header -->
+   <header class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Qatar Airways</h1>
+        
+        <!-- Hamburger Menu Icon for Mobile -->
+        <button id="menu-toggle" class="text-white md:hidden focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <!-- Navigation Links (hidden on mobile) -->
+        <nav id="menu" class="hidden md:flex space-x-6 absolute md:static top-0 left-0 w-full md:w-auto bg-gray-800 p-4 md:p-0">
+            <button id="menu-close" class="text-white absolute top-4 right-4 md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="#home" class="block md:inline hover:text-gray-300">Home</a>
+            <a href="#booking" class="block md:inline hover:text-gray-300">Book a Flight</a>
+            <a href="#destinations" class="block md:inline hover:text-gray-300">Destinations</a>
+            <a href="#services" class="block md:inline hover:text-gray-300">Services</a>
+            <a href="#contact" class="block md:inline hover:text-gray-300">Contact Us</a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- Hero Section with Slider -->
+<section id="home" class="relative h-screen">
+    <div class="swiper-container h-full">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-cover bg-center h-full flex items-center justify-center" style="background-image: url('https://example.com/flight1.jpg');">
+                <div class="p-6 bg-black bg-opacity-50 rounded text-center">
+                    <h1 class="text-5xl font-bold text-white">Discover the World with Us</h1>
+                    <p class="text-xl text-gray-200 mt-4">Fly to over 150 destinations worldwide</p>
+                </div>
+            </div>
+            <div class="swiper-slide bg-cover bg-center h-full flex items-center justify-center" style="background-image: url('https://example.com/flight2.jpg');">
+                <div class="p-6 bg-black bg-opacity-50 rounded text-center">
+                    <h1 class="text-5xl font-bold text-white">Experience Luxury & Comfort</h1>
+                    <p class="text-xl text-gray-200 mt-4">World-class in-flight service</p>
+                </div>
             </div>
         </div>
-        <div   
- id="mobile-menu" class="md:hidden fixed inset-0 bg-blue-600 text-white flex flex-col items-center space-y-4 p-4 hidden">
-            <a href="#home" class="text-lg">Home</a>
-            <a href="#destinations" class="text-lg">Destinations</a>
-            <a href="#about" class="text-lg">About Us</a>
-            <a href="#contact" class="text-lg">Contact</a>
-        </div>
-    </header>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
 
-    <section id="home" class="relative h-screen bg-cover bg-center" style="background-image: url('https://example.com/hero-image.jpg');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10 flex items-center justify-center h-full text-center text-white p-4">
-            <div class="animate__animated animate__fadeIn animate__delay-1s">  <h1 class="text-5xl font-extrabold mb-4 text-green-400">Discover Your Next Adventure</h1>  <p class="text-xl mb-8 animate__animated animate__fadeIn animate__delay-2s">Find the best travel deals and destinations.</p>
-                <a href="https://console.dialogflow.com/api-client/demo/embedded/350c7350-3d71-4ccd-b1fb-76b3ace74539" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-lg transition-all">Talk With ChatBot</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Destinations Section -->
-    <section id="destinations" class="py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8 text-orange-500">Top Destinations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
-                    <img src="https://example.com/destination2.jpg" alt="Destination 2" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">Destination 2</h3>
-                        <p class="text-gray-600">Another amazing place to explore.</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform">
-                    <img src="https://example.com/destination3.jpg" alt="Destination 3" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">Destination 3</h3>
-                        <p class="text-gray-600">Discover the beauty of this hidden gem.</p>
-                    </div>
-                </div>
-            </div>
-            </div>
-            </section>
-            
-            <section id="about" class="bg-gray-200 py-16">
-                <div class="container mx-auto text-center">
-                    <h2 class="text-4xl font-bold mb-8 text-purple-500">About Us</h2>
-                    <p class="text-lg">We are a passionate team of travel enthusiasts dedicated to helping you plan unforgettable adventures. With years of experience, we offer personalized travel planning services, curated itineraries, and insider tips to make your journey truly special.</p>
-                    <div class="flex justify-center mt-4">
-                        <img src="https://example.com/team-photo.jpg" alt="Our Team" class="rounded-full w-24 h-24">
-                    </div>
-                </div>
-            </section>
-            
-            <section class="text-gray-600 body-font relative">
-                <div class="absolute inset-0 bg-gray-300">
-                    <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
-                </div>
-                <div class="container px-5 py-24 mx-auto flex">
-                    <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
-                        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Contact Us</h2>
-                        <p class="leading-relaxed mb-5 text-gray-600">Have questions or need assistance? Feel free to reach out to us.</p>
-                        <div class="flex flex-col space-y-4">
-                            <p class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                                    <path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM3 19a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V19z"></path>
-                                </svg>
-                                <span class="ml-2">123 Main Street, City, State</span>
-                            </p>
-                            <p class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                                    <path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM3 19a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V19z"></path>
-                                </svg>
-                                <span class="ml-2">123-456-7890</span>
-                            </p>
-                            <p class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                                    <path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM3 19a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V19z"></path>
-                                </svg>
-                                <span class="ml-2">info@travelbuddy.com</span>
-                            </p>
+<!-- Booking Form Section -->
+<section id="booking" class="bg-white py-12">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="w-full md:w-2/3 p-4">
+                <h2 class="text-3xl font-bold mb-4">Book Your Flight</h2>
+                <form class="bg-gray-100 p-6 rounded shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2 font-semibold">From:</label>
+                            <input type="text" class="w-full p-3 border rounded" placeholder="Enter Departure City">
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-semibold">To:</label>
+                            <input type="text" class="w-full p-3 border rounded" placeholder="Enter Destination">
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-semibold">Departure Date:</label>
+                            <input type="date" class="w-full p-3 border rounded">
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-semibold">Return Date:</label>
+                            <input type="date" class="w-full p-3 border rounded">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block mb-2 font-semibold">Passengers:</label>
+                            <select class="w-full p-3 border rounded">
+                                <option>1 Adult</option>
+                                <option>2 Adults</option>
+                                <option>1 Adult, 1 Child</option>
+                                <option>Family</option>
+                            </select>
                         </div>
                     </div>
-                </div>
-            </section>
+                    <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white py-3 mt-4 rounded-lg transition-all">
+                        Search Flights
+                    </button>
+                </form>
+            </div>
+            <div class="w-full md:w-1/3 p-4 mt-8 md:mt-0 text-center">
+                <img src="https://example.com/qatar-plane.jpg" alt="Qatar Airways Plane" class="rounded shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Destinations Section -->
+<section id="destinations" class="bg-gray-100 py-12">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Popular Destinations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-4 rounded shadow-lg">
+                <img src="https://example.com/destination1.jpg" alt="Paris" class="rounded mb-4">
+                <h3 class="text-xl font-bold">Paris, France</h3>
+                <p class="text-gray-600">Experience the city of love and lights.</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow-lg">
+                <img src="https://example.com/destination2.jpg" alt="New York" class="rounded mb-4">
+                <h3 class="text-xl font-bold">New York, USA</h3>
+                <p class="text-gray-600">The city that never sleeps awaits you.</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow-lg">
+                <img src="https://example.com/destination3.jpg" alt="Tokyo" class="rounded mb-4">
+                <h3 class="text-xl font-bold">Tokyo, Japan</h3>
+                <p class="text-gray-600">Discover the blend of tradition and modernity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-white py-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+        <p class="text-gray-700 mb-4">For inquiries, please contact our customer service.</p>
+        <button class="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg">
+            Contact Us
+        </button>
+    </div>
+</section>
             
             <footer class="bg-blue-600 text-white py-4 text-center">
                 <p>© 2024 TravelBuddy. All rights reserved.</p>
             </footer>
             
-            <script src="./script.js"></script>
+            <script src="/script.js"></script>
             <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
   intent="WELCOME"
@@ -122,6 +158,23 @@
   agent-id="350c7350-3d71-4ccd-b1fb-76b3ace74539"
   language-code="en"
 ></df-messenger>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.7.5/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".swiper-container", {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 
 </body>
 </html>
