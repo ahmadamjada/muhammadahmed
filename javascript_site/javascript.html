@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Journey</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper JS for Slider -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="javascript.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+      /* Custom Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .card-hover {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card-hover:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-r from-blue-50 to-blue-100"
+    style="height: 100%; width: 100%"
+  >
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white p-4 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">JavaScript Journey</h1>
+        <ul class="flex space-x-4">
+          <li><a href="#history" class="hover:text-blue-200">History</a></li>
+          <li><a href="#features" class="hover:text-blue-200">Features</a></li>
+          <li>
+            <a href="#statistics" class="hover:text-blue-200">Statistics</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-pattern opacity-10"></div>
+      <div class="container mx-auto px-4 py-24 relative z-10 text-center">
+        <div class="max-w-4xl mx-auto">
+          <div class="relative">
+            <h1
+              class="text-6xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200 animate-fade-in animate-bounce"
+            >
+              JavaScript
+            </h1>
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-8 text-blue-100 tracking-wide animate-slide-in-up"
+            >
+              The Language of the Web
+            </h2>
+          </div>
+
+          <p
+            class="text-xl md:text-2xl mb-12 text-blue-50 leading-relaxed animate-fade-in"
+          >
+            Exploring the Evolution of JavaScript from its Humble Beginnings to
+            a Powerful Global Programming Ecosystem
+          </p>
+
+          <div
+            class="flex justify-center space-x-6 opacity-100 animate-fade-in"
+            style="animation-delay: 0.7s"
+          >
+            <a
+              href="https://www.javatpoint.com/javascript-tutorial" target="_blank"
+              class="px-8 py-3 bg-white text-blue-600 font-bold rounded-full hover:bg-blue-100 transition duration-300 transform hover:scale-105 shadow-lg"
+            >
+              Documentation
+            </a>
+            <a
+              href="#features"
+              class="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-blue-600 transition duration-300 transform hover:scale-105"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-blue-400 rounded-full opacity-10 animate-blob"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-72 h-72 bg-purple-400 rounded-full opacity-10 animate-blob-delay"
+        ></div>
+      </div>
+    </header>
+
+    <!-- History Timeline -->
+    <section id="history" class="container mx-auto py-16 px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+          JavaScript Evolution Timeline
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          A Journey Through the Transformative Moments of JavaScript's History
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 1995: Birth of JavaScript -->
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+        >
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                <!-- Icon for Birth -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 3v1m-6.364 6.364l1.414-1.414M12 21v-1m6.364-6.364l1.414 1.414M4.5 10.5h15m-9 3h3"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">1995: Birth</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Created by Brendan Eich at Netscape in just 10 days, JavaScript
+              was originally named Mocha, then LiveScript, before finally being
+              renamed JavaScript.
+            </p>
+            <button
+              onclick="toggleDetails('birth')"
+              id="birth-btn"
+              class="text-blue-500 font-bold hover:underline"
+            >
+              Read More
+            </button>
+            <div id="birth-details" class="hidden mt-4 text-gray-600">
+              JavaScript's quick evolution and adoption in the web world laid
+              the foundation for front-end interactivity, which became a
+              cornerstone of modern web applications.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2009: Node.js -->
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+        >
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-green-100 text-green-600 p-3 rounded-full mr-4">
+                <!-- Icon for Node.js -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">2009: Node.js</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              Ryan Dahl introduced Node.js, enabling server-side JavaScript
+              execution and revolutionizing backend development with its
+              event-driven architecture.
+            </p>
+            <button
+              onclick="toggleDetails('node')"
+              id="node-btn"
+              class="text-blue-500 font-bold hover:underline"
+            >
+              Read More
+            </button>
+            <div id="node-details" class="hidden mt-4 text-gray-600">
+              Node.js allowed JavaScript to power both client and server, paving
+              the way for full-stack development with a single language.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2015: ES6 -->
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer"
+        >
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div class="bg-purple-100 text-purple-600 p-3 rounded-full mr-4">
+                <!-- Icon for ES6 -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12h18M9 16h6m-6-8h6"
+                  />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">2015: ES6</h3>
+            </div>
+            <p class="text-gray-600 mb-4">
+              ECMAScript 6 (ES6) introduced major language improvements like
+              arrow functions, classes, modules, promises, and enhanced syntax.
+            </p>
+            <button
+              onclick="toggleDetails('es6')"
+              id="es6-btn"
+              class="text-blue-500 font-bold hover:underline"
+            >
+              Read More
+            </button>
+            <div id="es6-details" class="hidden mt-4 text-gray-600">
+              ES6 modernized JavaScript with essential new features, making the
+              language more powerful, concise, and easier to maintain.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">JavaScript: The Complete Guide for Beginners</h2>
+        <p class="text-lg text-center mb-12">A comprehensive journey into JavaScript's history, applications, and future.</p>
+    
+        <!-- Card Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cardContainer">
+    
+          <!-- Key Features Card -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">Key Features of JavaScript</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-4 text-gray-800">
+                <li><strong>Lightweight:</strong> Executes code directly in the browser.</li>
+                <li><strong>Event-Driven:</strong> Reacts to user actions like clicks and keystrokes.</li>
+                <li><strong>Cross-Platform:</strong> Works on all major browsers and devices.</li>
+                <li><strong>Object-Oriented:</strong> Supports versatile object-oriented programming.</li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- Applications Card -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">Applications of JavaScript</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-4 text-gray-800">
+                <li><strong>Web Development:</strong> Building interactive pages.</li>
+                <li><strong>Backend Development:</strong> With Node.js for server-side apps.</li>
+                <li><strong>Mobile Apps:</strong> Using frameworks like React Native for cross-platform apps.</li>
+                <li><strong>Game Development:</strong> Libraries like Phaser.js for game dev.</li>
+                <li><strong>Machine Learning:</strong> Implementing ML directly in the browser with TensorFlow.js.</li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- History Card -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">The History of JavaScript</h3>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-800">
+                JavaScript was created by Brendan Eich in 1995 to make web pages interactive. Initially designed to compete with Java, it quickly became a must-have language for web developers.
+              </p>
+            </div>
+          </div>
+    
+          <!-- Why Learn JavaScript Card -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">Why Learn JavaScript?</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-4 text-gray-800">
+                <li><strong>High Demand:</strong> JavaScript is one of the top languages for developers.</li>
+                <li><strong>Versatility:</strong> You can build web apps, mobile apps, and server-side applications.</li>
+                <li><strong>Rich Ecosystem:</strong> Numerous frameworks and libraries support development.</li>
+                <li><strong>Community Support:</strong> A vast community with abundant resources.</li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- Future of JavaScript Card -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">The Future of JavaScript</h3>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-800">
+                JavaScript is poised for further growth, with new innovations in areas like Web3, machine learning, and serverless computing.
+              </p>
+            </div>
+          </div>
+    
+        </div>
+    
+        <!-- Learn More Button -->
+        <div class="mt-12 text-center">
+          <button id="toggleBtn" class="inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white py-3 px-6 rounded-lg text-xl font-semibold hover:opacity-80 transition duration-300">
+            Learn More
+          </button>
+        </div>
+    
+        <!-- Hidden Additional Cards (Initially Hidden) -->
+        <div id="moreCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 hidden">
+    
+          <!-- Additional Card 1 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">JavaScript Frameworks & Libraries</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-4 text-gray-800">
+                <li><strong>React:</strong> Built by Facebook for user interfaces.</li>
+                <li><strong>Vue.js:</strong> A progressive framework for building UIs.</li>
+                <li><strong>Angular:</strong> A full-fledged front-end framework by Google.</li>
+                <li><strong>Node.js:</strong> Enables JavaScript on the server-side.</li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- Additional Card 2 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">How JavaScript is Used in Web Development</h3>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-800">
+                JavaScript powers everything from interactive web pages to dynamic content updates, animations, form validations, and the backbone of Single-Page Applications (SPAs).
+              </p>
+            </div>
+          </div>
+    
+          <!-- Additional Card 3 -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+            <div class="bg-gradient-to-r from-teal-400 to-blue-600 p-6 text-center">
+              <h3 class="text-2xl font-semibold text-white">JavaScript's Market Scope</h3>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-800">
+                With over 65-70% of developers using JavaScript, it is one of the most popular and in-demand languages worldwide, boasting a massive library ecosystem.
+              </p>
+            </div>
+          </div>
+    
+        </div>
+    
+        <!-- Show Less Button (Only at the End) -->
+        <div class="mt-12 text-center">
+          <button id="showLessBtn" class="inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-white py-3 px-6 rounded-lg text-xl font-semibold hover:opacity-80 transition duration-300 hidden">
+            Show Less
+          </button>
+        </div>
+    
+      </div>
+    </section>
+    
+    
+
+    <!-- why choose javascript -->
+    <section id="why-choose-js" class="container mx-auto py-16 px-6 border-2 border-gray-300 rounded-lg shadow-lg bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+                Why Choose JavaScript?
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Discover the reasons behind JavaScript's widespread adoption and why it continues to be a top choice for developers.
+            </p>
+        </div>
+    
+        <!-- Buttons for Main Topics -->
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center mb-8">
+            <button onclick="showContent('features')" class="styled-button bg-blue-500 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-blue-600 shadow-lg">JavaScript Features</button>
+            <button onclick="showContent('use-cases')" class="styled-button bg-green-500 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-green-600 shadow-lg">JavaScript Use Cases</button>
+            <button onclick="showContent('popularity')" class="styled-button bg-yellow-500 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-yellow-600 shadow-lg">JavaScript Popularity</button>
+            <button onclick="showContent('should-learn')" class="styled-button bg-purple-500 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-purple-600 shadow-lg">Should I Learn JavaScript in 2024?</button>
+            <button onclick="showContent('ecosystem')" class="styled-button bg-teal-500 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-teal-600 shadow-lg">JavaScript Ecosystem</button>
+            <button onclick="showContent('job-opportunities')" class="styled-button bg-red-500 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-red-600 shadow-lg">Job Opportunities</button>
+        </div>
+    
+        <!-- Buttons for Different Features -->
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+            <button onclick="showContent('dynamic')" class="bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:bg-blue-600">
+                Dynamic Language
+            </button>
+            <button onclick="showContent('cross-platform')" class="bg-green-500 text-white py-2 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:bg-green-600">
+                Cross-Platform
+            </button>
+            <button onclick="showContent('full-stack')" class="bg-purple-500 text-white py-2 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:bg-purple-600">
+                Full-Stack Capabilities
+            </button>
+            <button onclick="showContent('community')" class="bg-orange-500 text-white py-2 px-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl hover:bg-orange-600">
+                Strong Community
+            </button>
+        </div>
+    
+        <!-- Content Area for Dynamic Loading -->
+        <div class="content-area mt-8 max-w-3xl mx-auto rounded-lg p-6 hidden" id="content-container">
+            <div id="features-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">JavaScript Features</h3>
+                <p>JavaScript boasts numerous features like closures, asynchronous programming, and flexibility for both functional and object-oriented programming.</p>
+            </div>
+            <div id="use-cases-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">JavaScript Use Cases</h3>
+                <p>From front-end development with frameworks like React to server-side development with Node.js, JavaScript's versatility is unmatched.</p>
+            </div>
+            <div id="popularity-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">JavaScript Popularity</h3>
+                <p>JavaScript is one of the most popular languages worldwide, with a huge community and constant innovation that drives the web forward.</p>
+            </div>
+            <div id="should-learn-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">Should I Learn JavaScript in 2024?</h3>
+                <p>JavaScript remains a valuable language in 2024, essential for web development and widely used by companies in tech.</p>
+            </div>
+            <div id="ecosystem-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">JavaScript Ecosystem</h3>
+                <p>The JavaScript ecosystem is vast, with libraries and frameworks like Angular, Vue, and Next.js, enabling developers to create robust applications.</p>
+            </div>
+            <div id="job-opportunities-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">JavaScript Job Opportunities</h3>
+                <p>JavaScript skills are highly sought after in the job market, making it a great choice for developers looking to expand career options.</p>
+            </div>
+            <div id="dynamic-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">Dynamic Language</h3>
+                <p>JavaScript is a dynamic language, allowing for quick development and adjustment in web applications.</p>
+            </div>
+            <div id="cross-platform-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">Cross-Platform</h3>
+                <p>JavaScript runs on all major browsers, making it a cross-platform choice for web and mobile development.</p>
+            </div>
+            <div id="full-stack-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">Full-Stack Capabilities</h3>
+                <p>JavaScript enables developers to work on both front-end and back-end using frameworks like Node.js, React, and more.</p>
+            </div>
+            <div id="community-content" class="hidden content-section">
+                <h3 class="text-2xl font-bold mb-2">Strong Community</h3>
+                <p>JavaScript has a vast, supportive community, with countless resources, libraries, and frameworks available for learning and development.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+    <!-- Features Section -->
+    <section id="features" class="container mx-auto py-16 px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+            JavaScript: Comprehensive Features
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Explore the Diverse Capabilities and Modern Strengths of JavaScript
+          </p>
+        </div>
+      
+        <!-- Main Grid: 1 Column on Small Screens, 2 on Medium, and 4 on Large Screens -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- First Card: Why JavaScript -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <div class="p-6">
+              <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-4 rounded-full mr-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Versatility</h3>
+              </div>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Frontend Development
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Backend Development
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Mobile Development
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Second Card: Modern Capabilities -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <div class="p-6">
+              <div class="flex items-center mb-6">
+                <div class="bg-green-100 text-green-600 p-4 rounded-full mr-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Async Capabilities</h3>
+              </div>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Promises
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Async/Await
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Event Loop
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Third Card: Frameworks & Ecosystem -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <div class="p-6">
+              <div class="flex items-center mb-6">
+                <div class="bg-yellow-100 text-yellow-600 p-4 rounded-full mr-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Frameworks & Libraries</h3>
+              </div>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  React, Vue, Angular
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Node.js
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Express.js
+                </li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Fourth Card: Community & Resources -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <div class="p-6">
+              <div class="flex items-center mb-6">
+                <div class="bg-red-100 text-red-600 p-4 rounded-full mr-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 0v4m0-4H8m4 0h4" />
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Thriving Community</h3>
+              </div>
+              <ul class="space-y-3 text-gray-600">
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Stack Overflow
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  GitHub
+                </li>
+                <li class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  W3Schools
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="container mx-auto py-16 px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+          JavaScript by the Numbers
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Discover the Impressive Impact of JavaScript in the Web Development
+          Landscape
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+        >
+          <div class="p-8 text-center">
+            <div class="mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-16 w-16 mx-auto text-blue-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h3
+              data-target="95"
+              class="counter text-5xl font-bold text-blue-600 mb-4"
+            >
+              0%
+            </h3>
+            <p class="text-gray-600 text-lg">Websites Using JavaScript</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+        >
+          <div class="p-8 text-center">
+            <div class="mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-16 w-16 mx-auto text-green-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+            </div>
+            <h3
+              data-target="1.5"
+              class="counter text-5xl font-bold text-green-600 mb-4"
+            >
+              0
+            </h3>
+            <p class="text-gray-600 text-lg">NPM Packages (Millions)</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+        >
+          <div class="p-8 text-center">
+            <div class="mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-16 w-16 mx-auto text-purple-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                />
+              </svg>
+            </div>
+            <h3
+              data-target="70"
+              class="counter text-5xl font-bold text-purple-600 mb-4"
+            >
+              0%
+            </h3>
+            <p class="text-gray-600 text-lg">Developers Prefer JavaScript</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Slider -->
+    <section class="container mx-auto py-16 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Content Column -->
+          <div class="space-y-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800">
+              Explore the World of JavaScript Development
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              JavaScript has revolutionized web development, enabling dynamic, interactive, and powerful web applications. From front-end frameworks to server-side technologies, JavaScript continues to be the backbone of modern web experiences.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+                <span class="text-lg text-gray-700">Modern Web Technologies</span>
+              </div>
+              <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+                <span class="text-lg text-gray-700">Cutting-Edge Frameworks</span>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <button class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300">
+                Learn More
+              </button>
+              <button class="border border-blue-500 text-blue-500 px-6 py-3 rounded-lg hover:bg-blue-50 transition duration-300">
+                Get Started
+              </button>
+            </div>
+          </div>
+      
+          <!-- Slider Column -->
+          <div class="relative">
+            <div class="swiper mySwiper rounded-xl overflow-hidden shadow-2xl">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://images.unsplash.com/photo-1607705703571-c5a8695f18a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover" />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-16 mt-auto"
+    >
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Logo and Description -->
+          <div class="text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 mr-2"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-13h4v4h-4zm0 6h4v4h-4z"
+                />
+              </svg>
+              <h2 class="text-2xl font-bold">Muhammad Ahmed</h2>
+            </div>
+            <p class="text-gray-200 px-4 md:px-0 mb-4">
+              Passionate JavaScript developer creating innovative web solutions
+              and pushing the boundaries of modern web technologies.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="text-center">
+            <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="block hover:text-yellow-300 transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block hover:text-yellow-300 transition duration-300"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block hover:text-yellow-300 transition duration-300"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block hover:text-yellow-300 transition duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact and Social -->
+          <div class="text-center">
+            <h3 class="text-xl font-semibold mb-4">Connect With Me</h3>
+            <div class="flex justify-center space-x-4 mb-4">
+              <!-- Social Media Icons -->
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                class="text-white hover:text-gray-300 transition duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                class="text-white hover:text-gray-300 transition duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/yourusername"
+                target="_blank"
+                class="text-white hover:text-gray-300 transition duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="text-center">
+              <a
+                href="https://muhammad-ahmed.pages.dev"
+                target="_blank"
+                class="inline-block bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition duration-300"
+              >
+                My Portfolio
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <p>&copy; 2023 Muhammad Ahmed. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".mySwiper", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          effect: "creative",
+          creativeEffect: {
+            prev: {
+              shadow: true,
+              translate: ["-20%", 0, -1],
+            },
+            next: {
+              translate: ["100%", 0, 0],
+            },
+          },
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".counter");
+        const speed = 200; // Animation speed
+
+        const animateCounter = (counter) => {
+          const target = +counter.getAttribute("data-target");
+          const content = counter.textContent;
+          const isPercentage = content.includes("%");
+          const isDecimal = content.includes(".");
+
+          let count = 0;
+          const updateCounter = () => {
+            const increment = target / speed;
+
+            if (count < target) {
+              count += increment;
+
+              if (isPercentage) {
+                counter.textContent = `${Math.round(count)}%`;
+              } else if (isDecimal) {
+                counter.textContent = count.toFixed(1) + "M+";
+              } else {
+                counter.textContent = Math.round(count);
+              }
+
+              setTimeout(updateCounter, 1);
+            } else {
+              if (isPercentage) {
+                counter.textContent = `${target}%`;
+              } else if (isDecimal) {
+                counter.textContent = `${target}M+`;
+              } else {
+                counter.textContent = target;
+              }
+            }
+          };
+
+          updateCounter();
+        };
+
+        const observerOptions = {
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        counters.forEach((counter) => {
+          observer.observe(counter);
+        });
+      });
+    </script>
+
+    <script>
+      function toggleDetails(id) {
+        const details = document.getElementById(`${id}-details`);
+        const button = document.getElementById(`${id}-btn`);
+        if (details.classList.contains("hidden")) {
+          details.classList.remove("hidden");
+          button.textContent = "Read Less";
+        } else {
+          details.classList.add("hidden");
+          button.textContent = "Read More";
+        }
+      }
+    </script>
+
+<script>
+    function showContent(contentId) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.classList.add('hidden'));
+        
+        document.getElementById('content-container').classList.remove('hidden');
+        document.getElementById(`${contentId}-content`).classList.remove('hidden');
+    }
+    </script>
+
+
+    <script>
+      const toggleBtn = document.getElementById('toggleBtn');
+      const moreCards = document.getElementById('moreCards');
+    
+      toggleBtn.addEventListener('click', () => {
+        moreCards.classList.toggle('hidden');
+        toggleBtn.textContent = moreCards.classList.contains('hidden') ? 'Learn More' : 'Show Less';
+    
+        // Move the button to the end of the cards when "Show Less" is clicked
+        if (!moreCards.classList.contains('hidden')) {
+          moreCards.parentNode.appendChild(toggleBtn.parentNode);
+        }
+      });
+    </script>
+  </body>
+</html>
